@@ -7,6 +7,7 @@ import Counter from './_components/Counter';
 import BarChart from './_components/BarChart';
 import SocialPostCard from './_components/SocialPostCard';
 import InteractiveHero from './_components/InteractiveHero';
+import VideoSection from './_components/VideoSection';
 
 // Пути к вашим локальным изображениям
 const AUTHENTIC_IMAGES = {
@@ -16,6 +17,7 @@ const AUTHENTIC_IMAGES = {
   dealership: '/images/projects/ford-dealership/raptor.jpg',
   heroJet: '/images/projects/ford-dealership/jet.jpg',
   heroRaptor: '/images/projects/ford-dealership/raptor.jpg',
+  hudVideo: '/images/projects/ford-dealership/cockpit-flight-3-hd.mp4', // ✅ Путь к вашему видео
 };
 
 // Данные для диаграммы из вашего скриншота
@@ -56,14 +58,18 @@ export default function FordDealershipPage() {
           <p className="text-lg md:text-xl text-gray-400 leading-relaxed">Cold Lake Ford, located next to Canada&apos;s largest fighter base, had a powerful brand identity that wasn&apos;t being utilized online. Their digital presence was grounded, failing to connect with a community proud of its aviation heritage and resulting in low engagement and missed sales opportunities.</p>
         </div>
       </section>
-      <section className="max-w-7xl mx-auto px-6 my-16 md:my-24">
+      {/* <section className="max-w-7xl mx-auto px-6 my-16 md:my-24">
         <div className="relative h-[60vh] md:h-[90vh] rounded-2xl overflow-hidden">
           <Image src={AUTHENTIC_IMAGES.hud} alt="Вид из кабины истребителя" fill className="object-cover"/>
           <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
             <p className="text-2xl md:text-4xl font-bold text-white/80 border-2 border-white/50 p-4 rounded-lg backdrop-blur-sm">Engaging The Target Audience</p>
           </div>
         </div>
-      </section>
+      </section> */}
+          <VideoSection 
+        posterSrc={AUTHENTIC_IMAGES.hud}
+        videoSrc={AUTHENTIC_IMAGES.hudVideo}
+      />
       <section className="max-w-5xl mx-auto py-16 md:py-24 px-6">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-sm font-bold text-purple-400 uppercase tracking-widest">Execution</h2>
