@@ -12,7 +12,6 @@ import Services from './components/Services';
 import CallToAction from './components/CallToAction';
 import Footer from './components/Footer';
 
-import { services } from './data/services';
 import { projects } from './data/projects';
 
 export default function Home() {

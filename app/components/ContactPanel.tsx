@@ -76,7 +76,7 @@ export default function ContactPanel({ isOpen, onClose }: Props) {
                 <input type="email" id="email" className="w-full bg-[#2a2d31] border border-gray-600 rounded-md p-3 text-white focus:ring-2 focus:ring-purple-500 outline-none" />
               </div>
               <div>
-                <label htmlFor="service" className="block text-sm font-medium text-gray-300 mb-2">I'm interested in...</label>
+                <label htmlFor="service" className="block text-sm font-medium text-gray-300 mb-2">I&apos;m interested in...</label>
                 <select id="service" className="w-full bg-[#2a2d31] border border-gray-600 rounded-md p-3 text-white focus:ring-2 focus:ring-purple-500 outline-none appearance-none">
                   <option>Digital Platforms & Web Apps</option>
                   <option>Brand Strategy & Marketing</option>
