@@ -4,7 +4,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import ContactPanel from './ContactPanel'; // Импортируем нашу новую панель
+import ContactPanel from '../components/ContactPanel'; // Импортируем нашу новую панель
 
 export default function CallToAction() {
   const [isPanelOpen, setIsPanelOpen] = useState(false);

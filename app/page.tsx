@@ -5,12 +5,12 @@
 import Head from 'next/head';
 
 // --- Импорт компонентов ---
-import Header from './components/Header';
-import Hero from './components/Hero';
-import ProjectCarousel from './components/ProjectCarousel';
-import Services from './components/Services';
-import CallToAction from './components/CallToAction';
-import Footer from './components/Footer';
+import Header from './components/layout/header/Header';
+import Hero from './_components/Hero';
+import ProjectCarousel from './_components/ProjectCarousel';
+import Services from './_components/Services';
+import CallToAction from './_components/CallToAction';
+import Footer from './components/layout/Footer';
 
 import { projects } from './data/projects';
 
