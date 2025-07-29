@@ -66,7 +66,7 @@ export default function Services() {
             Where Code Meets Creativity
           </h2>
           <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-            We are a hybrid studio that blends technical excellence with marketing acumen to build solutions that don't just work, but also grow.
+            We are a hybrid studio that blends technical excellence with marketing acumen to build solutions that don&apos;t just work, but also grow.
           </p>
         </div>
 
