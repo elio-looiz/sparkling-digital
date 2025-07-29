@@ -21,7 +21,7 @@ const servicesData: Service[] = [
   {
     id: 'dev',
     title: 'Digital Platforms & Web Apps',
-    description: 'We don’t just build websites, we engineer robust digital experiences. From high-load platforms to interactive web applications, our code is clean, scalable, and built for performance. Your business goals are our technical blueprint.',
+    description: 'We don&apos;t just build websites, we engineer robust digital experiences. From high-load platforms to interactive web applications, our code is clean, scalable, and built for performance. Your business goals are our technical blueprint.',
     Icon: Code,
   },
   {
