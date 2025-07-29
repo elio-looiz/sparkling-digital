@@ -51,7 +51,7 @@ export default function ContactPanel({ isOpen, onClose }: Props) {
             className="fixed top-0 right-0 h-full w-full max-w-lg bg-[#181a1d] shadow-2xl z-50 p-8 flex flex-col"
           >
             <div className="flex items-center justify-between mb-8">
-              <h2 className="text-3xl font-bold text-white">Let's Talk</h2>
+              <h2 className="text-3xl font-bold text-white">Let&apos;s Talk</h2>
               <button
                 onClick={onClose}
                 className="p-2 rounded-full text-gray-400 hover:bg-white/10 hover:text-white transition-colors"
