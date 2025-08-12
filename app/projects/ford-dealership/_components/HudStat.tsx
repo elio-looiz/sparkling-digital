@@ -18,7 +18,7 @@ export default function HudStat({ Icon, label, value, unit = '' }: Props) {
       <svg className="absolute w-full h-full" viewBox="0 0 100 100">
         <motion.circle
           cx="50" cy="50" r="45"
-          stroke="rgba(192, 132, 252, 0.7)"
+          stroke="rgb(255, 165, 0)"
           strokeWidth="4"
           fill="none"
           strokeDasharray="60 230"
@@ -28,11 +28,11 @@ export default function HudStat({ Icon, label, value, unit = '' }: Props) {
         />
         <path
           d="M 5 30 A 25 25 0 0 1 30 5 L 20 5 L 5 20 Z M 70 5 A 25 25 0 0 1 95 30 L 95 20 L 80 5 Z M 95 70 A 25 25 0 0 1 70 95 L 80 95 L 95 80 Z M 30 95 A 25 25 0 0 1 5 70 L 5 80 L 20 95 Z"
-          fill="rgba(192, 132, 252, 1)"
+          fill="rgb(255, 165, 0)"
         />
       </svg>
       <div className="relative z-10">
-        <Icon className="w-10 h-10 text-purple-400 mx-auto mb-2" />
+        <Icon className="w-10 h-10 text-orange-400 mx-auto mb-2" />
         <p className="text-md font-semibold text-gray-200 leading-tight">{label}</p>
         <p className="text-5xl font-black text-white tracking-tighter">
           <Counter to={value} />

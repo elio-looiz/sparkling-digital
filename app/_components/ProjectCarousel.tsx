@@ -5,6 +5,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
+import Link from 'next/link';
 
 // --- ТИПЫ ДАННЫХ ---
 type Project = {
@@ -12,37 +13,32 @@ type Project = {
   category: string;
   description: string;
   image: string;
+  link: string;
 };
 
-type Props = {
-  projects: Project[];
-};
-
-// --- МАССИВ С ДАННЫМИ ПРОЕКТОВ (замените на свои) ---
+// --- ✨ ИЗМЕНЕНО: Обновлен и отсортирован массив проектов ---
 const dummyProjects: Project[] = [
   {
-    title: 'Aura',
-    category: 'Branding & Website',
-    description: 'A complete redesign of the brand identity and a new e-commerce platform for a modern wellness company, focusing on a minimalist aesthetic and a seamless user experience.',
-    image: 'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    title: 'Operation: Afterburner',
+    category: 'Digital Marketing Campaign',
+    description: 'A high-octane digital marketing campaign for Cold Lake Ford, aligning dealership prestige with the power of Canada\'s fighter jets to dominate the digital airspace and drive community engagement.',
+    image: '/images/projects/ford-dealership/jet.jpg',
+    link: '/projects/ford-dealership',
   },
   {
-    title: 'Nexus',
-    category: 'UI/UX Mobile App',
-    description: 'A native mobile application for a fintech startup, designed to simplify crypto trading. We developed an intuitive interface with powerful data visualization tools.',
-    image: 'https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    title: 'Impact Health',
+    category: 'Branding & Digital Strategy',
+    description: 'A complete brand and digital identity for a physiotherapy clinic, focused on building patient trust through empathetic storytelling and a seamless online experience.',
+    image: '/images/projects/impact-health/physio-session.jpg',
+    link: '/projects/impact-health',
   },
+  // ✨ ИЗМЕНЕНО: Третий проект заменен на TopShelf Brand
   {
-    title: 'Orbit',
-    category: 'Interactive Experience',
-    description: 'An immersive WebGL experience for a science museum, allowing users to explore the solar system in 3D. The project pushed the boundaries of browser-based interactions.',
-    image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-  },
-  {
-    title: 'Momentum',
-    category: 'Marketing Campaign',
-    description: 'A high-impact landing page and digital assets for a new electric vehicle launch. The campaign focused on dynamic visuals and compelling storytelling to drive pre-orders.',
-    image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    title: 'TopShelf Brand',
+    category: 'Brand Identity Design',
+    description: 'We developed a comprehensive brand identity from scratch for a new retail store, including a vibrant logo, brand guidelines, and visual assets to capture the owner\'s vision. [cite: 49, 52]',
+    image: '/images/projects/topshelf/topshelf-store-sign.png', // Изображение из кейс-стади
+    link: '/projects/topshelf-brand',
   },
 ];
 
@@ -72,7 +68,7 @@ const itemVariants: Variants = {
 };
 
 // --- КОМПОНЕНТ ---
-export default function ProjectCarousel({ projects = dummyProjects }: Props) {
+export default function ProjectCarousel({ projects = dummyProjects }) {
   const [activeProject, setActiveProject] = useState(0);
 
   return (
@@ -92,16 +88,14 @@ export default function ProjectCarousel({ projects = dummyProjects }: Props) {
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
 
           <div className="relative h-full w-full flex items-end justify-center">
-            {/* AnimatePresence теперь будет работать правильно */}
             <AnimatePresence initial={false}>
               {activeProject === index ? (
                 <motion.div
-                  // ✅ ИСПРАВЛЕНИЕ 1: Добавлен key
                   key="active-content"
                   variants={contentVariants}
                   initial="hidden"
                   animate="visible"
-                  exit="exit" // Используем кастомный exit
+                  exit="exit"
                   className="w-full p-6 md:p-10 text-left"
                 >
                   <motion.p variants={itemVariants} className="text-sm font-semibold uppercase text-purple-400">
@@ -113,17 +107,23 @@ export default function ProjectCarousel({ projects = dummyProjects }: Props) {
                   <motion.p variants={itemVariants} className="text-gray-300 mt-4 max-w-lg">
                     {project.description}
                   </motion.p>
-                  <motion.a
-                    href="#"
-                    variants={itemVariants}
-                    className="inline-flex items-center gap-2 mt-6 px-4 py-2 bg-purple-600/80 text-white rounded-md hover:bg-purple-500 transition-colors backdrop-blur-sm"
+                  
+                  <Link
+                    href={project.link}
+                    target={project.link === '#' ? '_self' : '_blank'}
+                    rel="noopener noreferrer"
                   >
-                    View Project <ArrowUpRight size={18} />
-                  </motion.a>
+                    <motion.div
+                      variants={itemVariants}
+                      className="inline-flex items-center gap-2 mt-6 px-4 py-2 bg-purple-600/80 text-white rounded-md hover:bg-purple-500 transition-colors backdrop-blur-sm"
+                    >
+                      View Project <ArrowUpRight size={18} />
+                    </motion.div>
+                  </Link>
+
                 </motion.div>
               ) : (
                 <motion.div
-                  // ✅ ИСПРАВЛЕНИЕ 2: Добавлен key
                   key="inactive-content"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}

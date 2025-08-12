@@ -5,12 +5,10 @@
 import Head from 'next/head';
 
 // --- Импорт компонентов ---
-import Header from './components/layout/header/Header';
 import Hero from './_components/Hero';
 import ProjectCarousel from './_components/ProjectCarousel';
 import Services from './_components/Services';
 import CallToAction from './_components/CallToAction';
-import Footer from './components/layout/Footer';
 
 import { projects } from './data/projects';
 
@@ -24,15 +22,13 @@ export default function Home() {
       </Head>
 
       <div className="bg-[#111] text-white font-sans">
-        
-        <Header />
 
         <main>
           <Hero />
           
           {/* ✅ FIX: Добавляем ID к компонентам, чтобы навигация работала */}
           <div id="projects">
-            <ProjectCarousel projects={projects} />
+            <ProjectCarousel />
           </div>
           
           <div id="services">
@@ -48,7 +44,6 @@ export default function Home() {
 
         </main>
 
-        <Footer />
       </div>
     </>
   );
